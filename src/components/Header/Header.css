@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-right: 100px; */
+  /* background-image: linear-gradient(
+    rgba(126, 144, 254, 1),
+    rgba(152, 115, 255, 1)
+  ); */
+}
+.navbar a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: rgba(117, 117, 117, 1);
+}
+.navbar button {
+  font-weight: 600;
+  font-size: 20px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 19px 28px;
+  background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+}
