@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100vh;
 
   /* flex-shrink: 0; */
   background-color: rgba(126, 144, 254, 0.05);
@@ -23,7 +24,7 @@
 .banner-container img {
   max-width: 816px;
   max-height: 100vh;
-  margin-top: -70px;
+  /* margin-top: -70px; */
 }
 .btn-getStart {
   padding: 19px 28px;
