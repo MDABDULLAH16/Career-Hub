@@ -7,8 +7,9 @@
     rgba(126, 144, 254, 1),
     rgba(152, 115, 255, 1)
   ); */
+  background-color: rgba(126, 144, 254, 0.05);
 }
-.navbar a {
+.link a {
   margin-left: 30px;
   text-decoration: none;
   color: rgba(117, 117, 117, 1);
