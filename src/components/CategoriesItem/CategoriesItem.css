@@ -1,0 +1,40 @@
+.job-item {
+  border-radius: 8px;
+  width: 311px;
+
+  max-height: 243px;
+  padding: 40px 40px;
+  margin: 13px;
+  background: linear-gradient(
+    90deg,
+    rgba(126, 144, 254, 0.05) 0%,
+    rgba(152, 115, 255, 0.05) 100%
+  );
+}
+.job-item img {
+  width: 40px;
+  height: 40px;
+  padding: 15px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(126, 144, 254, 0.1) 0%,
+    rgba(152, 115, 255, 0.1) 100%
+  );
+  margin-bottom: 0;
+}
+.job-item h2 {
+  margin-top: 32px;
+  color: var(--Dark-02, #474747);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+}
+.job-item p {
+  color: var(--Dark-04, #a3a3a3);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px; /* 162.5% */
+}

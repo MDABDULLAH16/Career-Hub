@@ -14,13 +14,13 @@ const JobCategoryList = () => {
   return (
     <div>
       <div className="categories-title">
-        <h1> JobCategoryList is here {categories.length}</h1>
+        <h1>Job Category List</h1>
         <p>
           Explore thousands of job opportunities with all the information you
           need. Its your future
         </p>
       </div>
-      <div>
+      <div className="categories-item">
         {categories.map((category) => (
           <CategoriesItem
             category={category}
