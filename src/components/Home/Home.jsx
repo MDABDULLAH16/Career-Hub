@@ -1,6 +1,6 @@
 import React from "react";
 import Banner from "../Banner/Banner";
-import JobCategoryList from "../JobCategorryList/JobCategoryList";
+import JobCategoryList from "../JobCategoryList/JobCategoryList";
 
 const Home = () => {
   return (

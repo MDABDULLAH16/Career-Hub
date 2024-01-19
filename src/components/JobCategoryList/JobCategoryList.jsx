@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./JobCategoryList.css";
 import CategoriesItem from "../CategoriesItem/CategoriesItem";
 
 const JobCategoryList = () => {
@@ -12,7 +13,13 @@ const JobCategoryList = () => {
 
   return (
     <div>
-      <h1> JobCategoryList is here {categories.length}</h1>
+      <div className="categories-title">
+        <h1> JobCategoryList is here {categories.length}</h1>
+        <p>
+          Explore thousands of job opportunities with all the information you
+          need. Its your future
+        </p>
+      </div>
       <div>
         {categories.map((category) => (
           <CategoriesItem

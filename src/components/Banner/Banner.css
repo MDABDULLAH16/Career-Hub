@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-height: 500px;
+
   /* flex-shrink: 0; */
   background-color: rgba(126, 144, 254, 0.05);
 }
