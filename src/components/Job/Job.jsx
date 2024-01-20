@@ -2,9 +2,11 @@ import React from "react";
 import "./Job.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign, faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 
 const Job = ({ job }) => {
   const {
+    id,
     logo,
     company_name,
     location,
@@ -13,6 +15,10 @@ const Job = ({ job }) => {
     remote_or_onsite,
     job_title,
   } = job;
+  const navigate = useNavigate();
+  const handleViewDetails = () => {
+    navigate(`/jobDetails/${id}`);
+  };
   return (
     <div className="job-post-item">
       <img src={logo} alt="" />
@@ -36,7 +42,9 @@ const Job = ({ job }) => {
           {salary}
         </p>
       </div>
-      <button className="btn-view-details">View Details</button>
+      <button onClick={handleViewDetails} className="btn-view-details">
+        <Link to={`/jobDetails/${id}`}>View Details</Link>
+      </button>
     </div>
   );
 };

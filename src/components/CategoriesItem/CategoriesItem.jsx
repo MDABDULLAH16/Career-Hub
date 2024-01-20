@@ -2,7 +2,7 @@ import React from "react";
 import "./CategoriesItem.css";
 
 const CategoriesItem = ({ category }) => {
-  console.log(category);
+  // console.log(category);
   const { category_name, availability, logo } = category;
   return (
     <div className="job-item">

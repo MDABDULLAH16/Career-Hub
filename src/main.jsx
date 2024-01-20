@@ -8,6 +8,7 @@ import Home from "./components/Home/Home.jsx";
 import Statistics from "./components/Statistics/Statistics.jsx";
 import AppliedJobs from "./components/AppliedJobs/AppliedJobs.jsx";
 import Blog from "./components/Blog/Blog.jsx";
+import JobDetails from "./components/JobDetails/JobDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
       },
       { path: "/appliedJobs", element: <AppliedJobs></AppliedJobs> },
       { path: "/blog", element: <Blog></Blog> },
+      {
+        path: "/jobDetails/:id",
+        element: <JobDetails></JobDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jobDetails/${params.id}`),
+      },
     ],
   },
 ]);
