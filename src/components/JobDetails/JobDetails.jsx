@@ -9,10 +9,13 @@ import {
   faPhone,
   faStreetView,
 } from "@fortawesome/free-solid-svg-icons";
+import toast, { Toaster } from "react-hot-toast";
+import { addToDb } from "../../utilities/fakeDb";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
   const {
+    id,
     experiences,
     educational_requirements,
     job_responsibility,
@@ -21,12 +24,17 @@ const JobDetails = () => {
     job_title,
     contact_information,
   } = jobs;
-  console.log(jobs);
+  // console.log(jobs);
+  const handleApply = (id) => {
+    addToDb(id);
+    // console.log(id);
+  };
   return (
     <div className="job-details-container">
       <div className="job-details-header">
         <h1>Job Details</h1>
       </div>
+      <Toaster />
       <div className="job-description-container">
         <div className="job-description">
           <p>
@@ -95,7 +103,9 @@ const JobDetails = () => {
               </p>
             </div>
           </div>
-          <button className="btn-apply-now">Apply Now</button>
+          <button onClick={() => handleApply(id)} className="btn-apply-now">
+            Apply Now
+          </button>
         </div>
       </div>
     </div>
