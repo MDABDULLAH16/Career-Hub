@@ -2,7 +2,13 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendarDay,
+  faDollarSign,
+  faEnvelopeCircleCheck,
+  faPhone,
+  faStreetView,
+} from "@fortawesome/free-solid-svg-icons";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -13,6 +19,7 @@ const JobDetails = () => {
     job_description,
     salary,
     job_title,
+    contact_information,
   } = jobs;
   console.log(jobs);
   return (
@@ -21,7 +28,7 @@ const JobDetails = () => {
         <h1>Job Details</h1>
       </div>
       <div className="job-description-container">
-        <div>
+        <div className="job-description">
           <p>
             <span className="font-bold">Job description: </span>
             {job_description}
@@ -32,19 +39,18 @@ const JobDetails = () => {
           </p>
 
           <span>
-            <h4>Educational Requirement:</h4>
+            <h4 className="font-bold">Educational Requirement:</h4>
             <p> {educational_requirements}</p>
           </span>
           <span>
-            <h4>Experience:</h4> <p>{experiences}</p>
+            <h4 className="font-bold">Experience:</h4> <p>{experiences}</p>
           </span>
         </div>
         <div className="details-container">
           <div className="job-details">
-            <h1>Job Details</h1>
-
+            <h3>Job Details</h3>
+            <hr className="hr" />
             <p>
-              {" "}
               <FontAwesomeIcon
                 className="icon"
                 icon={faDollarSign}
@@ -53,9 +59,41 @@ const JobDetails = () => {
               {salary} <span className="salary">(per Month)</span>
             </p>
             <p>
-              <span className="font-bold">Job Title:</span> {job_title}
+              <span className="font-bold">
+                {" "}
+                <FontAwesomeIcon
+                  className="icon"
+                  icon={faCalendarDay}
+                ></FontAwesomeIcon>
+                Job Title:
+              </span>{" "}
+              {job_title}
             </p>
-            <div></div>
+            <h3>Contact Information</h3>
+            <hr />
+            <div>
+              <p>
+                <FontAwesomeIcon
+                  className="icon"
+                  icon={faPhone}
+                ></FontAwesomeIcon>
+                <span className="font-bold">Phone: </span>{" "}
+                {contact_information.phone}
+              </p>
+              <p>
+                <FontAwesomeIcon
+                  className="icon"
+                  icon={faEnvelopeCircleCheck}
+                />
+                <span className="font-bold">Email:</span>{" "}
+                {contact_information.email}
+              </p>
+              <p>
+                <FontAwesomeIcon className="icon" icon={faStreetView} />
+                <span className="font-bold">Address:</span>{" "}
+                {contact_information.address}
+              </p>
+            </div>
           </div>
           <button className="btn-apply-now">Apply Now</button>
         </div>

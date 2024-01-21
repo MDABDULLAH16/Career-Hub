@@ -22,9 +22,18 @@
   background-color: white;
   margin-top: 100px;
 }
+.job-description p {
+  color: var(--Dark-03, #757575);
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
 .font-bold {
-  font-weight: 700;
+  font-weight: 800;
   font-size: 18px;
+  color: black;
 }
 .icon {
   margin-right: 10px;
@@ -48,9 +57,17 @@
     rgba(126, 144, 254, 0.1) 0%,
     rgba(152, 115, 255, 0.1) 100%
   );
+  color: var(--Dark-02, #474747);
+  font-family: Manrope;
+  font-size: 20px;
 }
-.job-details h1 {
+.job-details h3 {
   margin: 0;
+}
+.job-details hr {
+  opacity: 0.3;
+  background: linear-gradient(90deg, #7e90fe 0%, #9873ff 100%);
+  margin-bottom: 24px;
 }
 .btn-apply-now {
   border: none;
