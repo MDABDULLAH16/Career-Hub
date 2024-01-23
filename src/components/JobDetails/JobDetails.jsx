@@ -25,9 +25,22 @@ const JobDetails = () => {
     contact_information,
   } = jobs;
   // console.log(jobs);
-  const handleApply = (id) => {
-    addToDb(id);
+  const handleApply = (jobId) => {
+    // console.log(typeof jobId, jobId);
+    // const submitJobString = localStorage.getItem("applied-job");
+    // const submitJob = JSON.parse(submitJobString);
+    // console.log(submitJob);
+    // for (const id in submitJob) {
+    //   const appliedId = parseInt(id);
+    //   // console.log(typeof id, id);
+    //   if (jobId === appliedId) {
+    //     toast("You already applied this Job");
+    //   } else {
+    //     addToDb(jobId);
+    //   }
+    // }
     // console.log(id);
+    addToDb(jobId);
   };
   return (
     <div className="job-details-container">

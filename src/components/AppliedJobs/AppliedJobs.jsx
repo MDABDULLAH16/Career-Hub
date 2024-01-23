@@ -29,7 +29,7 @@ const AppliedJobs = () => {
     }
     SetApplied(savedApplied);
   }, [jobs]);
-  return <div>{<h1>Applied Jobs will be here!! </h1>}</div>;
+  return <div>{<h1>Applied Jobs will be here!! {applied.length} </h1>}</div>;
 };
 
 export default AppliedJobs;

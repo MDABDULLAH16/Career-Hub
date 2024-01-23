@@ -1,0 +1,9 @@
+.rechart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 8%, 98%);
+}
+.rechart {
+  margin-top: 120px;
+}
