@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getShoppingCart } from "../../utilities/fakeDb";
 import { useLoaderData } from "react-router-dom";
+import AppliedJobDetails from "../AppliedJobDetails/AppliedJobDetails";
 
 const AppliedJobs = () => {
   // const [jobs, setJobs] = useState([]);
@@ -29,7 +30,16 @@ const AppliedJobs = () => {
     }
     SetApplied(savedApplied);
   }, [jobs]);
-  return <div>{<h1>Applied Jobs will be here!! {applied.length} </h1>}</div>;
+  return (
+    <div>
+      <div className="job-details-header">
+        <h1>Applied Jobs</h1>
+      </div>
+      {applied.map((job) => (
+        <AppliedJobDetails job={job}></AppliedJobDetails>
+      ))}
+    </div>
+  );
 };
 
 export default AppliedJobs;
