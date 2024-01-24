@@ -12,6 +12,25 @@ const addToDb = (id) => {
   localStorage.setItem("applied-job", JSON.stringify(shoppingCart));
 };
 
+//get applied job from local storages
+const getSavedApplication = () => {
+  const getStoredApplication = localStorage.getItem("application-job");
+  if (getStoredApplication) {
+    return JSON.parse(getStoredApplication);
+  }
+  return [];
+};
+
+//save job Applications
+const saveApplication = (id) => {
+  const getAppliedJobs = getSavedApplication();
+  const exist = getAppliedJobs.find((jobId) => jobId === id);
+  if (!exist) {
+    getAppliedJobs.push(id);
+    localStorage.setItem("application-job", JSON.stringify(getAppliedJobs));
+  }
+};
+
 const removeFromDb = (id) => {
   const shoppingCart = getShoppingCart();
   if (id in shoppingCart) {
@@ -35,4 +54,11 @@ const deleteShoppingCart = () => {
   localStorage.removeItem("applied-job");
 };
 
-export { addToDb, removeFromDb, getShoppingCart, deleteShoppingCart };
+export {
+  getSavedApplication,
+  saveApplication,
+  addToDb,
+  removeFromDb,
+  getShoppingCart,
+  deleteShoppingCart,
+};

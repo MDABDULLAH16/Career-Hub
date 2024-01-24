@@ -7,7 +7,11 @@ const FeaturedJobs = () => {
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
-      .then((data) => setJobs(data));
+      .then((data) => {
+        if (data.length > 3) {
+          setJobs(data);
+        }
+      });
   }, []);
   return (
     <div>

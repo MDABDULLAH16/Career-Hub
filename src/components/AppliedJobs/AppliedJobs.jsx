@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { getShoppingCart } from "../../utilities/fakeDb";
+import { getSavedApplication } from "../../utilities/fakeDb";
 import { useLoaderData } from "react-router-dom";
 import AppliedJobDetails from "../AppliedJobDetails/AppliedJobDetails";
 
 const AppliedJobs = () => {
   // const [jobs, setJobs] = useState([]);
   const jobs = useLoaderData();
-  const [applied, SetApplied] = useState([]);
+  // console.log(jobs);
+
+  const [displayJob, SetDisplayJob] = useState([]);
+
   // console.log(applied);
 
   // useEffect(() => {
@@ -15,28 +18,24 @@ const AppliedJobs = () => {
   //     .then((data) => setJobs(data));
   // }, []);
   useEffect(() => {
-    const storedJobs = getShoppingCart();
-    let savedApplied = [];
-
-    for (const id in storedJobs) {
-      const idNumber = parseInt(id);
-      // console.log(typeof id);
-      const appliedJobs = jobs.find((job) => job.id === idNumber);
-      if (appliedJobs) {
-        const apply = storedJobs[id];
-        appliedJobs.apply = apply;
-        savedApplied.push(appliedJobs);
+    const getAppliedJob = getSavedApplication();
+    if (jobs.length > 0) {
+      const appliedJob = [];
+      for (const id of getAppliedJob) {
+        // console.log(typeof id);
+        const job = jobs.find((job) => job.id == id);
+        appliedJob.push(job);
       }
+      SetDisplayJob(appliedJob);
     }
-    SetApplied(savedApplied);
   }, [jobs]);
   return (
     <div>
       <div className="job-details-header">
         <h1>Applied Jobs</h1>
       </div>
-      {applied.map((job) => (
-        <AppliedJobDetails job={job}></AppliedJobDetails>
+      {displayJob.map((job) => (
+        <AppliedJobDetails key={job.id} job={job}></AppliedJobDetails>
       ))}
     </div>
   );

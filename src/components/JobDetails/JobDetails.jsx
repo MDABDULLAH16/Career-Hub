@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import "./JobDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,12 +10,17 @@ import {
   faStreetView,
 } from "@fortawesome/free-solid-svg-icons";
 import toast, { Toaster } from "react-hot-toast";
-import { addToDb } from "../../utilities/fakeDb";
+import { addToDb, saveApplication } from "../../utilities/fakeDb";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
+  console.log(jobs);
+  const { id } = useParams();
+  const idInt = parseInt(id);
+  const job = jobs.find((job) => job.id === idInt);
+  // console.log(job);
+
   const {
-    id,
     experiences,
     educational_requirements,
     job_responsibility,
@@ -23,9 +28,9 @@ const JobDetails = () => {
     salary,
     job_title,
     contact_information,
-  } = jobs;
+  } = job;
   // console.log(jobs);
-  const handleApply = (jobId) => {
+  const handleApply = () => {
     // console.log(typeof jobId, jobId);
     // const submitJobString = localStorage.getItem("applied-job");
     // const submitJob = JSON.parse(submitJobString);
@@ -40,7 +45,9 @@ const JobDetails = () => {
     //   }
     // }
     // console.log(id);
-    addToDb(jobId);
+
+    saveApplication(id);
+    toast("Applied done this Jobs");
   };
   return (
     <div className="job-details-container">
