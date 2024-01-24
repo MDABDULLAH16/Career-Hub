@@ -14,7 +14,7 @@ import { addToDb, saveApplication } from "../../utilities/fakeDb";
 
 const JobDetails = () => {
   const jobs = useLoaderData();
-  console.log(jobs);
+  // console.log(typeof jobs);
   const { id } = useParams();
   const idInt = parseInt(id);
   const job = jobs.find((job) => job.id === idInt);
