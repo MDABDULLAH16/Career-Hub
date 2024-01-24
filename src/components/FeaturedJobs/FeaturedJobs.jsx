@@ -4,15 +4,15 @@ import "./FeaturedJobs.css";
 
 const FeaturedJobs = () => {
   const [Jobs, setJobs] = useState([]);
+  const [dataLength, SetDataLength] = useState(4);
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
       .then((data) => {
-        if (data.length > 3) {
-          setJobs(data);
-        }
+        setJobs(data);
       });
   }, []);
+
   return (
     <div>
       <div className="categories-title">
@@ -23,12 +23,17 @@ const FeaturedJobs = () => {
         </p>
       </div>
       <div className="job-post-container">
-        {Jobs.map((job) => (
+        {Jobs.slice(0, dataLength).map((job) => (
           <Job job={job} key={job.id}></Job>
         ))}
       </div>
-      <div className="see-all">
-        <button className="btn-see-all">See All Jobs</button>
+      <div className={dataLength === Jobs.length ? "disabled" : "see-all"}>
+        <button
+          onClick={() => SetDataLength(Jobs.length)}
+          className="btn-see-all"
+        >
+          See All Jobs
+        </button>
       </div>
     </div>
   );

@@ -9,6 +9,9 @@
   justify-content: center;
   margin-top: 40px;
 }
+.disabled {
+  display: none;
+}
 .btn-see-all {
   border-radius: 4px;
   color: white;
