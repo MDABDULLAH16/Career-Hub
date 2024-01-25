@@ -1,0 +1,20 @@
+.filter-container {
+  background: white;
+  position: relative;
+  padding: 10px;
+  /* margin-bottom: 20px 0; */
+  display: inline-block;
+  display: flex;
+  justify-content: end;
+}
+.jobs {
+  font-size: 20px;
+  font-weight: 600px;
+  list-style: none;
+}
+.jobs li {
+  padding: 2px;
+}
+.jobs button {
+  padding: 0 10px;
+}

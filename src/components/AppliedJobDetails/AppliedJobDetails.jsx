@@ -21,7 +21,7 @@ const AppliedJobDetails = ({ job }) => {
   };
   return (
     <div>
-      <div className="main-container">
+      <div className="jobs-container">
         <div className="details-logo">
           <img src={logo} alt="" />
         </div>

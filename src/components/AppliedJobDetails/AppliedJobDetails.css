@@ -1,4 +1,9 @@
 .main-container {
+  background: var(--Dark-06, #e8e8e8);
+  border-radius: 8px;
+  margin: 24px 0px;
+}
+.jobs-container {
   display: flex;
   border: 1px solid var(--Dark-06, #e8e8e8);
   border-radius: 8px;
