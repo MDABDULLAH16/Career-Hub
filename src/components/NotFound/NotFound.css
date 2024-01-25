@@ -1,0 +1,27 @@
+/* NotFound.css */
+
+.notFoundContainer {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.notFoundHeading {
+  color: #d9534f;
+  font-size: 2em;
+}
+
+.notFoundText {
+  color: #333;
+  font-size: 1.2em;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .notFoundHeading {
+    font-size: 1.5em;
+  }
+
+  .notFoundText {
+    font-size: 1em;
+  }
+}
